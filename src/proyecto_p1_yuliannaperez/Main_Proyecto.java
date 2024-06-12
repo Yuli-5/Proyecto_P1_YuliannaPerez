@@ -4,6 +4,8 @@
  */
 package proyecto_p1_yuliannaperez;
 
+import Paneles.Login;
+
 /**
  *
  * @author User
@@ -14,8 +16,8 @@ public class Main_Proyecto {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-
+        Login login = new Login();
+        login.setVisible(true);
 
     }
     
