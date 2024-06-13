@@ -134,7 +134,7 @@ public class Login extends javax.swing.JFrame {
             txtPassword.setEchoChar((char)0);
         }
         else{
-            txtPassword.setEchoChar('*');
+            txtPassword.setEchoChar('.');
         }
     }//GEN-LAST:event_CheckMostrarActionPerformed
 
