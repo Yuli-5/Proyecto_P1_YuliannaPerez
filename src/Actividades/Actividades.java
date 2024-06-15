@@ -58,7 +58,7 @@ public class Actividades {
     }
     
     public void Agregar(){ //Agregaria actividades
-
+        
     }
     public void Eliminar(){ //Eliminaria actividades
         
