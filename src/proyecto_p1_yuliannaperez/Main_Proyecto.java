@@ -4,21 +4,27 @@
  */
 package proyecto_p1_yuliannaperez;
 
+import Actividades.Actividades;
 import Actividades.Usuario;
 import Paneles.Login;
-import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Main_Proyecto {
 
     public static void main(String[] args) {
-        Usuario nuevo = new Usuario();
-        ArrayList<Usuario> usuarios = new ArrayList();
+        Usuario user = new Usuario();
+        Actividades act = new Actividades();
+        user.AgregarUsuario("Admin ", "Principal ", "user ", "1234 ");
         Login login = new Login();
-        login.setBounds(20, 10, 950,710);
-        login.setLocationRelativeTo(null);       
-        login.setVisible(true); 
-        
-       
-    }
+        login.setBounds(20, 10, 950, 710);
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
+    }   
     
+    public void Mostrar(){
+        JOptionPane.showMessageDialog(null, "Su informacion esta incompleta revise de nuevo", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+    }
+    public void UsuarioIncorrecto(){
+        JOptionPane.showMessageDialog(null, "Su informacion esta incorrecta, usuario no existe", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+    }    
 }

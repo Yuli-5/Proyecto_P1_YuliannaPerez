@@ -4,6 +4,8 @@
  */
 package Actividades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author User
@@ -40,20 +42,40 @@ public class Usuario {
         return password;
     }
 
-    public void setNombre(String nombre) {
+    public String setNombre(String nombre) {
         this.nombre = nombre;
+        return nombre;
     }
 
-    public void setApellido(String apellido) {
+    public String setApellido(String apellido) {
         this.apellido = apellido;
+        return apellido;
     }
 
-    public void setUsuario(String usuario) {
+    public String setUsuario(String usuario) {
         this.usuario = usuario;
+        return usuario;
     }
 
-    public void setPassword(String password) {
+    public String setPassword(String password) {
         this.password = password;
+        return password;
     }
-
+    public void toString(String nombre,String apellido, String usuario, String Password){
+        System.out.println(nombre);
+        System.out.println(apellido);
+        System.out.println(usuario);
+        System.out.println(Password);
+    }
+    
+    public ArrayList AgregarUsuario(String a,String b, String c,String d) {
+        ArrayList<Usuario> usuarios = new ArrayList();
+        Usuario nuevo = new Usuario();
+        nuevo = new Usuario(nuevo.setNombre(a),nuevo.setApellido(b), nuevo.setUsuario(c), nuevo.setPassword(d));
+        usuarios.add(nuevo);
+        for (int i = 0; i < usuarios.size(); i++) {
+            System.out.println(nuevo.getNombre()+nuevo.getApellido()+nuevo.getUsuario()+nuevo.getPassword());
+        }
+        return usuarios;
+    }
 }

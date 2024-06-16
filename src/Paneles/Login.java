@@ -4,7 +4,6 @@
  */
 package Paneles;
 
-import java.awt.Color;
 
 public class Login extends javax.swing.JFrame {
 
@@ -33,7 +32,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 204));
-        getContentPane().setLayout(new java.awt.GridLayout());
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jLayeredPane1.setBackground(new java.awt.Color(0, 153, 204));
         jLayeredPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -42,7 +41,7 @@ public class Login extends javax.swing.JFrame {
 
         jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
         jLayeredPane1.add(jPanel2);
-        jPanel2.setBounds(889, 625, 100, 100);
+        jPanel2.setBounds(889, 625, 0, 0);
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 204));
         jPanel3.setMinimumSize(new java.awt.Dimension(950, 700));
@@ -63,6 +62,11 @@ public class Login extends javax.swing.JFrame {
         btnLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Iniciar Sesión");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         txtPassword.setEchoChar('*');
 
@@ -185,6 +189,7 @@ public class Login extends javax.swing.JFrame {
         newUser.setLocationRelativeTo(null);    
         newUser.setVisible(true);
         this.setVisible(false);
+
     }//GEN-LAST:event_btnLogin1ActionPerformed
 
     private void CheckMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckMostrarActionPerformed
@@ -195,6 +200,12 @@ public class Login extends javax.swing.JFrame {
             txtPassword.setEchoChar('*');
         }
     }//GEN-LAST:event_CheckMostrarActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        if(){
+            
+        }
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox CheckMostrar;
