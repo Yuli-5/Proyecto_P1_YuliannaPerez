@@ -147,7 +147,8 @@ public class JframeMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAcActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        
+        this.setVisible(false);
+ 
     }//GEN-LAST:event_btnSalirActionPerformed
 
 

@@ -66,6 +66,11 @@ public class Principal_actividades extends javax.swing.JFrame {
         btnAgregar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setBackground(new java.awt.Color(0, 153, 204));
         btnLimpiar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -221,6 +226,13 @@ public class Principal_actividades extends javax.swing.JFrame {
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnMenuActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+           
+       Agenda agenda = new Agenda();
+
+
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -6,16 +6,13 @@ package Actividades;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author User
- */
 public class Usuario {
     private String nombre;
     private String apellido;
     private String usuario;
     private String password;
-
+    
+        
     public Usuario() {
     }
 
@@ -24,29 +21,26 @@ public class Usuario {
         this.apellido = apellido;
         this.usuario = usuario;
         this.password = password;
-    }
-
+    }     
     public String getNombre() {
         return nombre;
-    }
-
-    public String getApellido() {
+    }  
+   public String getApellido() {
         return apellido;
     }
 
     public String getUsuario() {
         return usuario;
+
     }
 
     public String getPassword() {
         return password;
     }
-
     public String setNombre(String nombre) {
         this.nombre = nombre;
         return nombre;
     }
-
     public String setApellido(String apellido) {
         this.apellido = apellido;
         return apellido;
@@ -67,15 +61,22 @@ public class Usuario {
         System.out.println(usuario);
         System.out.println(Password);
     }
-    
-    public ArrayList AgregarUsuario(String a,String b, String c,String d) {
-        ArrayList<Usuario> usuarios = new ArrayList();
+    public  ArrayList ArrayUser(String a,String b, String c,String d) {
+        ArrayList<Usuario> ArrayUsers = new ArrayList();
         Usuario nuevo = new Usuario();
         nuevo = new Usuario(nuevo.setNombre(a),nuevo.setApellido(b), nuevo.setUsuario(c), nuevo.setPassword(d));
-        usuarios.add(nuevo);
-        for (int i = 0; i < usuarios.size(); i++) {
-            System.out.println(nuevo.getNombre()+nuevo.getApellido()+nuevo.getUsuario()+nuevo.getPassword());
+        ArrayUsers.add(nuevo);
+        System.out.println(nuevo.getNombre()+ nuevo.getApellido()+ nuevo.getUsuario()+nuevo.getPassword());
+        
+        return ArrayUsers;
+    }    
+    public boolean validate(String username, String password, ArrayList<Usuario> users){
+        for (Usuario user: users) {
+            if (user.getUsuario().equals(username)&& user.getPassword().equals(password)) {
+                return true;
+            }
         }
-        return usuarios;
+        return false;
     }
 }
+

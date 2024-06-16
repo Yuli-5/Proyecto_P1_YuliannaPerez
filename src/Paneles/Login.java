@@ -5,12 +5,22 @@
 package Paneles;
 
 
-public class Login extends javax.swing.JFrame {
+import Actividades.Usuario;
+import Paneles.NuevoUsuario;
+import java.util.ArrayList;
+import proyecto_p1_yuliannaperez.Main_Proyecto;
 
+
+public class Login extends javax.swing.JFrame {
+    private Usuario user;
+    private Main_Proyecto main ;
+    private NuevoUsuario newUser;
     public Login() {
         initComponents();
+        user = new Usuario();
+        main = new Main_Proyecto();
+        newUser = new NuevoUsuario();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -102,7 +112,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(120, 120, 120)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(247, 247, 247))
@@ -185,11 +195,9 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogin1ActionPerformed
-        NuevoUsuario newUser = new NuevoUsuario();
         newUser.setLocationRelativeTo(null);    
         newUser.setVisible(true);
         this.setVisible(false);
-
     }//GEN-LAST:event_btnLogin1ActionPerformed
 
     private void CheckMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckMostrarActionPerformed
@@ -202,8 +210,17 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckMostrarActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        if(){
-            
+        String username = txtUsuario.getText();
+        String password = txtPassword.getText();
+        ArrayList <Usuario>users = user.ArrayUser("Admin","Principal2","user","1234");
+        if (user.validate(username, password, users)) {
+            JframeMenu menu = new JframeMenu();
+            menu.setLocationRelativeTo(null);
+            menu.setVisible(true);
+            this.setVisible(false);
+        }
+        else{
+            main.UsuarioIncorrecto();
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
