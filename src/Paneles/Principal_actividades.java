@@ -235,6 +235,7 @@ public class Principal_actividades extends javax.swing.JFrame {
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         this.txtTitulo.setText(" ");
         this.txtDescripcion.setText(" ");
+        this.Date.cleanup();
         
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
@@ -253,21 +254,18 @@ public class Principal_actividades extends javax.swing.JFrame {
 
         Actividades newac = new Actividades();
         Main_Proyecto main = new Main_Proyecto();
-        ArrayList<Actividades> Activities = new ArrayList();
         String titulo = txtTitulo.getText();
         String descripcion = txtDescripcion.getText();
         String actividad = CmbActividad.getSelectedItem().toString();
         String prioridad = CmbPrioridad.getSelectedItem().toString();
-        String date = Date.getDateFormatString();
+        String date = Date.getDate().toString();
         if(titulo.isEmpty()||descripcion.isEmpty()||actividad.isEmpty()|| prioridad.isEmpty()||date.isEmpty()){
-            main.ConfirmarAgenda();
+            main.Mostrar();
         }
         else{
             newac.Agregar(titulo,descripcion,actividad, prioridad);   
             agenda.addRowToTable(titulo, descripcion, prioridad, actividad, date);
-            //agenda.setLocationRelativeTo(null);    
-            //agenda.setVisible(true);
-            //this.setVisible(false);            
+            main.ConfirmarAgenda();
         }
 
     }//GEN-LAST:event_btnAgregarActionPerformed
@@ -275,8 +273,7 @@ public class Principal_actividades extends javax.swing.JFrame {
     private void btnAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendaActionPerformed
             agenda.setLocationRelativeTo(null);    
             agenda.setVisible(true);
-            this.setVisible(false);  
-
+            this.setVisible(false); 
     }//GEN-LAST:event_btnAgendaActionPerformed
 
     /**

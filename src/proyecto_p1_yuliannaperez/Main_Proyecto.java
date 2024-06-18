@@ -29,5 +29,7 @@ public class Main_Proyecto {
     public void ConfirmarAgenda(){
         JOptionPane.showMessageDialog(null, "Su actividad fue creada con exito", "Atencion", JOptionPane.INFORMATION_MESSAGE);
     }  
-
+    public void ConfirmarEliminado(){
+        JOptionPane.showMessageDialog(null, "Su actividad fue eliminada con exito", "Atencion", JOptionPane.INFORMATION_MESSAGE);
+    }      
 }
