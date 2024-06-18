@@ -26,6 +26,9 @@ public class Main_Proyecto {
     public void UsuarioIncorrecto(){
         JOptionPane.showMessageDialog(null, "Su informacion esta incorrecta, usuario no existe", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
     }    
+    public void UsuarioCreado(){
+        JOptionPane.showMessageDialog(null, "Su informacion esta incorrecta, usuario no existe", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+    } 
     public void ConfirmarAgenda(){
         JOptionPane.showMessageDialog(null, "Su actividad fue creada con exito", "Atencion", JOptionPane.INFORMATION_MESSAGE);
     }  

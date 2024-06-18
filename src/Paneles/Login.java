@@ -218,6 +218,7 @@ public class Login extends javax.swing.JFrame {
         user = new Usuario();
         array.setLista(users);
         if (user.validate(username, password, array.getLista())) {
+            main.UsuarioCreado();
             JframeMenu menu = new JframeMenu();
             menu.setLocationRelativeTo(null);
             menu.setVisible(true);
