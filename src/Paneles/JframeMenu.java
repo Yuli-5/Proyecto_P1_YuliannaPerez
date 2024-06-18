@@ -159,8 +159,7 @@ public class JframeMenu extends javax.swing.JFrame {
         login.setLocationRelativeTo(null);
         login.setVisible(true);
         this.setVisible(false);
-        
- 
+        System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed

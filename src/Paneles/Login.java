@@ -213,16 +213,16 @@ public class Login extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         String username = txtUsuario.getText();
         String password = txtPassword.getText();
+        ArrayList<Usuario> users = user.ArrayUser("Admin", "Principal", "admin", "1234");
         ArrayGlobal array = ArrayGlobal.getInstancia();
-        ArrayList <Usuario>users = user.ArrayUser("Admin","Principal2","user","1234");
-        array.getLista().add(user);
-        if (user.validate(username, password, users)) {
+        user = new Usuario();
+        array.setLista(users);
+        if (user.validate(username, password, array.getLista())) {
             JframeMenu menu = new JframeMenu();
             menu.setLocationRelativeTo(null);
             menu.setVisible(true);
             this.setVisible(false);
-        }
-        else{
+        } else {
             main.UsuarioIncorrecto();
         }
     }//GEN-LAST:event_btnLoginActionPerformed

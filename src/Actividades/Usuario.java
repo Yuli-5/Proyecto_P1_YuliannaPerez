@@ -63,8 +63,7 @@ public class Usuario {
     }
     public  ArrayList ArrayUser(String a,String b, String c,String d) {
         ArrayList<Usuario> ArrayUsers = new ArrayList();
-        Usuario nuevo = new Usuario();
-        nuevo = new Usuario(nuevo.setNombre(a),nuevo.setApellido(b), nuevo.setUsuario(c), nuevo.setPassword(d));
+        Usuario nuevo = new Usuario(a,b,c,d);
         ArrayUsers.add(nuevo);
         System.out.println(nuevo.getNombre()+ nuevo.getApellido()+ nuevo.getUsuario()+nuevo.getPassword());
         

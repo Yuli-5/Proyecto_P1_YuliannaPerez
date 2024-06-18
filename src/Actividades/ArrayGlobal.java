@@ -28,5 +28,9 @@ public class ArrayGlobal {
     public  ArrayList<Usuario> getLista() {
         return lista;
     }
-  
+
+    public void setLista(ArrayList<Usuario> lista) {
+        this.lista = lista;
+    }
+    
 }
