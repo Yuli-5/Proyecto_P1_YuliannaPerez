@@ -4,12 +4,17 @@
  */
 package Paneles;
 
+import Actividades.Actividades;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import proyecto_p1_yuliannaperez.Main_Proyecto;
+
 /**
  *
  * @author User
  */
 public class Principal_actividades extends javax.swing.JFrame {
-
+    private Agenda agenda = new Agenda();   
     public Principal_actividades() {
         initComponents();
     }
@@ -228,9 +233,25 @@ public class Principal_actividades extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMenuActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-           
-       Agenda agenda = new Agenda();
 
+        Actividades newac = new Actividades();
+        Main_Proyecto main = new Main_Proyecto();
+        ArrayList<Actividades> Activities = new ArrayList();
+        String titulo = txtTitulo.getText();
+        String descripcion = txtDescripcion.getText();
+        String actividad = CmbActividad.getSelectedItem().toString();
+        String prioridad = CmbPrioridad.getSelectedItem().toString();
+        String date = Date.getDateFormatString();
+        if(titulo.isEmpty()||descripcion.isEmpty()||actividad.isEmpty()|| prioridad.isEmpty()||date.isEmpty()){
+            main.ConfirmarAgenda();
+        }
+        else{
+            newac.Agregar(titulo,descripcion,actividad, prioridad);   
+            agenda.addRowToTable(titulo, descripcion, prioridad, actividad, date);
+            agenda.setLocationRelativeTo(null);    
+            agenda.setVisible(true);
+            this.setVisible(false);            
+        }
 
     }//GEN-LAST:event_btnAgregarActionPerformed
 

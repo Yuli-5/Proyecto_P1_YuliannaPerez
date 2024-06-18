@@ -4,13 +4,15 @@
  */
 package Actividades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author User
  */
 public class Actividades {
     private String titulo; // titulo de la actividad
-    private String descipcion; // descripcion de esta misma
+    private String descripcion; // descripcion de esta misma
     private String tipo; //de entretenimiento, educativa, etc
     // fecha a realizarse pero aun me falta investigar como crear un calendario
     private String prioridad; // alta, media, baja
@@ -18,9 +20,9 @@ public class Actividades {
     public Actividades() {
     }
 
-    public Actividades(String titulo, String descipcion, String tipo, String prioridad) {
+    public Actividades(String titulo, String descripcion, String tipo, String prioridad) {
         this.titulo = titulo;
-        this.descipcion = descipcion;
+        this.descripcion = descripcion;
         this.tipo = tipo;
         this.prioridad = prioridad;
     }
@@ -29,8 +31,8 @@ public class Actividades {
         return titulo;
     }
 
-    public String getDescipcion() {
-        return descipcion;
+    public String getDescripcion() {
+        return descripcion;
     }
 
     public String getTipo() {
@@ -41,31 +43,48 @@ public class Actividades {
         return prioridad;
     }
 
-    public void setTitulo(String titulo) {
+    public String setTitulo(String titulo) {
         this.titulo = titulo;
+        return titulo;
     }
 
-    public void setDescipcion(String descipcion) {
-        this.descipcion = descipcion;
+    public String setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+        return descripcion;
     }
 
-    public void setTipo(String tipo) {
+    public String setTipo(String tipo) {
         this.tipo = tipo;
+        return tipo;
     }
 
-    public void setPrioridad(String prioridad) {
+    public String setPrioridad(String prioridad) {
         this.prioridad = prioridad;
+        return prioridad;
     }
     
-    public void Agregar(){ //Agregaria actividades
-        
-    }
     public void Eliminar(){ //Eliminaria actividades
         
     }
     public void actividadesPrioritarias(){
         
     }
-    
+    public  ArrayList Agregar(String a,String b, String c,String d) {
+        ArrayList<Actividades> ArrayActividades = new ArrayList();
+        Actividades nuevo = new Actividades();
+        nuevo = new Actividades(nuevo.setTitulo(a),nuevo.setDescripcion(b), nuevo.setPrioridad(c), nuevo.setTipo(d));
+        ArrayActividades.add(nuevo);
+        System.out.println(nuevo.getTitulo()+ nuevo.getDescripcion()+ nuevo.getPrioridad()+nuevo.getTipo());
+        
+        return ArrayActividades;
+    }    
+    public boolean validaPrioridad(String tipo,ArrayList<Usuario> users){
+        for (Usuario user: users) {
+            if (user.getUsuario().equals(tipo)) {
+                return true;
+            }
+        }
+        return false;
+    }
     
 }

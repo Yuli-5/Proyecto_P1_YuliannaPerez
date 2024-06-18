@@ -10,9 +10,7 @@ package Paneles;
  */
 public class JframeMenu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form JframeMenu
-     */
+
     public JframeMenu() {
         initComponents();
     }
@@ -51,16 +49,26 @@ public class JframeMenu extends javax.swing.JFrame {
         btnDelete.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Eliminar Actividad");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnShow.setBackground(new java.awt.Color(0, 153, 204));
         btnShow.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         btnShow.setForeground(new java.awt.Color(255, 255, 255));
         btnShow.setText("Mostrar Agenda");
+        btnShow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowActionPerformed(evt);
+            }
+        });
 
         btnSalir.setBackground(new java.awt.Color(0, 153, 204));
         btnSalir.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalir.setText("Salir");
+        btnSalir.setText("Cerrar Sesion");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
@@ -147,9 +155,27 @@ public class JframeMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAcActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        Login login = new Login();
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
         this.setVisible(false);
+        
  
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        Agenda agenda = new Agenda();
+        agenda.setLocationRelativeTo(null);    
+        agenda.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowActionPerformed
+        Agenda agenda = new Agenda();
+        agenda.setLocationRelativeTo(null);
+        agenda.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnShowActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

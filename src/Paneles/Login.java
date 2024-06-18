@@ -5,6 +5,7 @@
 package Paneles;
 
 
+import Actividades.ArrayGlobal;
 import Actividades.Usuario;
 import Paneles.NuevoUsuario;
 import java.util.ArrayList;
@@ -212,7 +213,9 @@ public class Login extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         String username = txtUsuario.getText();
         String password = txtPassword.getText();
+        ArrayGlobal array = ArrayGlobal.getInstancia();
         ArrayList <Usuario>users = user.ArrayUser("Admin","Principal2","user","1234");
+        array.getLista().add(user);
         if (user.validate(username, password, users)) {
             JframeMenu menu = new JframeMenu();
             menu.setLocationRelativeTo(null);

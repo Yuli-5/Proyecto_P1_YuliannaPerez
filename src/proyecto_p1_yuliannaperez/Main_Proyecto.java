@@ -9,7 +9,6 @@ import Actividades.Usuario;
 import Paneles.Login;
 import javax.swing.JOptionPane;
 
-
 public class Main_Proyecto {
 
     public static void main(String[] args) {
@@ -18,9 +17,9 @@ public class Main_Proyecto {
         Login login = new Login();
         login.setBounds(20, 10, 950, 710);
         login.setLocationRelativeTo(null);
-        login.setVisible(true);     
-    }   
-    
+        login.setVisible(true);  
+       
+    }      
     public void Mostrar(){
         JOptionPane.showMessageDialog(null, "Su informacion esta incompleta revise de nuevo", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
     }
@@ -29,5 +28,6 @@ public class Main_Proyecto {
     }    
     public void ConfirmarAgenda(){
         JOptionPane.showMessageDialog(null, "Su actividad fue creada con exito", "Atencion", JOptionPane.INFORMATION_MESSAGE);
-    }      
+    }  
+
 }

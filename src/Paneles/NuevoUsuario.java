@@ -4,7 +4,9 @@
  */
 package Paneles;
 
+import Actividades.ArrayGlobal;
 import Actividades.Usuario;
+import java.util.ArrayList;
 import proyecto_p1_yuliannaperez.Main_Proyecto;
 
 /**
@@ -189,11 +191,13 @@ public class NuevoUsuario extends javax.swing.JFrame {
         String apellidos = txtApellidos.getText();
         String User = txtUser.getText();
         String Pass = Password.getText();
+        ArrayGlobal array = ArrayGlobal.getInstancia();
         if(nombre.isEmpty()||apellidos.isEmpty()||User.isEmpty()|| Pass.isEmpty()){
             main.Mostrar();
         }
         else{
-            usernew.ArrayUser(nombre,apellidos,User, Pass);        
+            usernew.ArrayUser(nombre, apellidos, User, Pass);
+            array.getLista().add(usernew);
             JframeMenu menu = new JframeMenu();
             menu.setLocationRelativeTo(null);    
             menu.setVisible(true);
